@@ -1,7 +1,7 @@
 {
   "name": "droidcon",
   "version": "1.0.0",
-  "description": "Android Drawable Material Icon Downloader",
+  "description": "Android Drawable Material Icon Downloader | Unpack icons from command line",
   "main": "index.js",
   "bin": {
     "droidcon": "index.js"

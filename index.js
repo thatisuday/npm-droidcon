@@ -1,4 +1,4 @@
-#!/user/bin/env node
+#!/usr/bin/env node
 
 const
 	program = require("commander"),
@@ -89,8 +89,14 @@ download(zipDownloadLink, {filename : fileName}, function(err){
 	}
 	else{
 
-		// extract zip to _tmp directory
-		extract(fileName, {dir : '_tmp'}, function(err){
+		// command window directory
+		var cmdDir = process.cwd();						// C:\project
+		var tmpDir = cmdDir + '/_tmp'; 					// C:\project\_tmp
+		var iconDir = tmpDir + '/' + iconFile;			// C:\project\_tmp\ic_menu_24dp_black
+		var androidIconDir =  iconDir + '/android/';	// C:\project\_tmp\ic_menu_24dp_black\android\
+
+		// extract zip to temporary directory
+		extract(fileName, {dir : tmpDir}, function(err){
 			if(err){
 				console.log(colors.yellow("Something went wrong while extracting icon pack."));
 				console.log(err);
@@ -100,16 +106,15 @@ download(zipDownloadLink, {filename : fileName}, function(err){
 			fs.unlinkSync(fileName);
 
 			// copy android files in current directory from which cmd was opened
-			var cmdDir = process.cwd();
-			ncp(__dirname + '/_tmp/' + iconFile + '/android/', cmdDir, function(err){
+			ncp(androidIconDir, cmdDir, function(err){
 				if(err){
 					console.log(err);
 				}
 				else{
 					console.log(colors.green("Done!"));
 
-					// remove _tmp directory
-					rimraf(__dirname + '/_tmp/' + iconFile, {}, function(err){
+					// remove temporary directory
+					rimraf(tmpDir, {}, function(err){
 						if(err){
 							console.log(colors.grey("Failed to clean download directory."));
 						}

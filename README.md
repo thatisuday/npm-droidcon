@@ -11,7 +11,7 @@ Well, **droidcon** will make your life simpler. Install droidcon globally on npm
 npm install -g droidcon
 ```
 
-open command window from your android `res` folder where `drawable` folder is.
+open command window from your android `res` folder where `drawable` folder is situated.
 
 use following command to download and extract icons
 
@@ -25,4 +25,8 @@ droidcon --name delete-forever --size 18dp --color black
 >
 > size can be written as `24` or `24dp` style. You can also find sizes on above link when you click a icon.
 
-**Above command will download and unpack icons automatically and clean up download files.**
+--
+
+Above command will download and unpack icons automatically and clean up download files.
+
+Wanna taste of it, open any folder and use simple command `droidcon`.
