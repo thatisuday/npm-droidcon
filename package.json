@@ -1,0 +1,39 @@
+{
+  "name": "droidcon",
+  "version": "1.0.0",
+  "description": "Android Drawable Material Icon Downloader",
+  "main": "index.js",
+  "bin": {
+    "droidcon": "index.js"
+  },
+  "preferGlobal": true,
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/thatisuday/droidcon.git"
+  },
+  "keywords": [
+    "icons",
+    "material",
+    "android",
+    "drawable"
+  ],
+  "author": "Uday Hiwarale <uhiwarale@gmail.com> (https://github.com/thatisuday)",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/thatisuday/droidcon/issues"
+  },
+  "homepage": "https://github.com/thatisuday/droidcon#readme",
+  "dependencies": {
+    "colors": "^1.1.2",
+    "commander": "^2.9.0",
+    "download-file": "^0.1.5",
+    "extract-zip": "^1.5.0",
+    "lodash": "^4.16.2",
+    "ncp": "^2.0.0",
+    "request": "^2.75.0",
+    "rimraf": "^2.5.4"
+  }
+}
